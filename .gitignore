@@ -1,0 +1,15 @@
+# See https://github.com/weppos/gitignore/blob/weppos/Ruby.gitignore
+Gemfile.lock
+
+coverage
+rdoc
+tmp
+
+# Bundler
+.bundle
+pkg
+
+# YARD artifacts
+.yardoc
+_yardoc
+doc/
