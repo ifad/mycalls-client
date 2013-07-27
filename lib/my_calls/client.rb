@@ -26,7 +26,7 @@ module MyCalls
     #
     # @return [String]
     DEFAULT_OPTIONS  = {
-      :base_uri         => "http://lleir.a008.ifad.org/mycalls",
+      :base_uri         => "http://webapps.ifad.org/mycalls",
       :timeout          => 2,
 
       :memcache_server  => 'localhost:11211',
