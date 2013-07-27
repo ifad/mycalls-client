@@ -7,7 +7,7 @@ module MyCalls
 
         module ClassMethods
 
-          # Returns the url which the client instance wil call on each requres
+          # Gets the API endpoint URL
           #
           # @return [String] the url
           #
@@ -15,7 +15,7 @@ module MyCalls
             @url
           end
 
-          # Sets the url which the client instance wil call on each requres
+          # Sets the API endpoint URL
           #
           # @param  [String] u the url
           # @return [String] the url
