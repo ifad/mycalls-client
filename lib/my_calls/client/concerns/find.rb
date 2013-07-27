@@ -51,7 +51,7 @@ module MyCalls
           rescue Error::NotFound
             nil
           end
-          alias :show :find_all
+          alias :show :find
 
         end
 
