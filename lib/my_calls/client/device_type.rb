@@ -6,6 +6,7 @@ module MyCalls
     class DeviceType < Base
 
       include MyCalls::Client::Concerns::Find
+      include MyCalls::Client::Concerns::Search
       include MyCalls::Client::Concerns::Magic
 
       self.url = 'device_types'
