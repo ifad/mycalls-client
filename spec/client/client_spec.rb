@@ -88,28 +88,28 @@ describe MyCalls::Client do
   describe "#get" do
     it "delegates the request to #request" do
       client = klass.new
-      mock(client).request(:get, "categories", anything) { "" }
+      mock(client).request(:get, "categories", anything) { "{}" }
 
       client.get("categories")
     end
 
     it "passes the arguments to #request" do
       client = klass.new
-      mock(client).request(:get, "categories", hash_including(:foo => "bar")) { "" }
+      mock(client).request(:get, "categories", hash_including(:foo => "bar")) { "{}" }
 
       client.get("categories", { :foo => "bar" })
     end
 
     it "adds the :accept => :json header" do
       client = klass.new
-      mock(client).request(:get, "categories", hash_including(:headers => {'Accept' => 'application/json'})) { "" }
+      mock(client).request(:get, "categories", hash_including(:headers => {'Accept' => 'application/json'})) { "{}" }
 
       client.get("categories", { :foo => "bar" })
     end
 
     it "forces the :accept => :json header" do
       client = klass.new
-      mock(client).request(:get, "categories", hash_including(:headers => {'Accept' => 'application/json'})) { "" }
+      mock(client).request(:get, "categories", hash_including(:headers => {'Accept' => 'application/json'})) { "{}" }
 
       client.get("categories", { :headers => {'Accept' => 'application/vnd.ms-excel'} })
     end

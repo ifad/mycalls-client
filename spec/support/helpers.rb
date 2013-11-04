@@ -12,7 +12,7 @@ module Helpers
   end
 
   def json_fixture(*name)
-    MyCalls::Client::Serializer.load File.read(fixture(*name))
+    MultiJson.load File.read(fixture(*name))
   end
 
 end

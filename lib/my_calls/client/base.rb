@@ -34,7 +34,7 @@ module MyCalls
       # @return [String]
       #
       def to_json
-        Serializer.dump(@table)
+        MultiJson.dump(@table)
       end
 
       # ActiveSupport +as_json+ interface.

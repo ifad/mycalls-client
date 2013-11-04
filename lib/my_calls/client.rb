@@ -4,6 +4,7 @@ require "active_support/notifications"
 require 'active_support/core_ext'
 require 'active_support/concern'
 require 'dalli'
+require 'multi_json'
 
 require "my_calls/client/concerns"
 require "my_calls/railtie" if defined?(Rails)
@@ -15,7 +16,6 @@ module MyCalls
     autoload :Version,      "my_calls/client/version"
     autoload :VERSION,      "my_calls/client/version"
     autoload :Error,        "my_calls/client/error"
-    autoload :Serializer,   "my_calls/client/serializer"
 
     autoload :StaffMember,  "my_calls/client/staff_member"
     autoload :Division,     "my_calls/client/division"
@@ -34,7 +34,7 @@ module MyCalls
          :namespace => "my_calls_client",
           :compress => true,
         :expires_in => 15.minutes,
-        :serializer => Serializer
+        :serializer => MultiJson
       }
     }
 
@@ -90,7 +90,7 @@ module MyCalls
     # @see #request
     def get(path, options = {}, &block)
       (options[:headers] ||= {})['Accept'] = 'application/json'
-      Serializer.load request(:get, path, options, &block)
+      MultiJson.load request(:get, path, options, &block)
     end
 
 

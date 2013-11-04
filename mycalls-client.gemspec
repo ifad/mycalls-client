@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   # If you want to depend on other gems, add them here, along with any
   # relevant versions
   s.add_dependency("typhoeus", "~> 0.6")
-  s.add_dependency("oj")
+  s.add_dependency("multi_json")
   s.add_dependency("activesupport", ">= 3.0")
   s.add_dependency("dalli")
 

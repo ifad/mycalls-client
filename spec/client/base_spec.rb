@@ -15,7 +15,7 @@ describe MyCalls::Client::Base do
       base = klass.new
       base.foo = "bar"
       base.bar = "baz"
-      base.to_json.should == MyCalls::Client::Serializer.dump(:foo => 'bar', :bar => 'baz')
+      base.to_json.should == MultiJson.dump(:foo => 'bar', :bar => 'baz')
     end
   end
 
