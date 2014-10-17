@@ -1,5 +1,4 @@
 require "my_calls/client/base"
-require 'debugger'
 
 module MyCalls
   class Client
